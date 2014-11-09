@@ -25,11 +25,11 @@
     <!-- Default color for notification LED is blue. -->
     <color name="config_defaultNotificationColor">#ff0000ff</color>
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option
     <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option
+    <bool name="config_intrusiveBatteryLed">true</bool>-->
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -247,8 +247,13 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">7</integer>
+    <integer name="config_deviceHardwareKeys">0</integer>
 
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
 </resources>
