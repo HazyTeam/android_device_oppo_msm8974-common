@@ -37,6 +37,9 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 #TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Assertions
+TARGET_BOARD_INFO_FILE ?= device/oppo/msm8974-common/board-info.txt
+
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/oppo/msm8974-common/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
@@ -70,7 +73,6 @@ BLUETOOTH_HCI_USE_MCT := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/oppo/msm8974-common/cmhw
@@ -141,6 +143,18 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Enable transparent compression in the build
+# TARGET_TRANSPARENT_COMPRESSION_METHOD := lz4
+
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 # inherit from the proprietary version
 ifneq ($(QCPATH),)
