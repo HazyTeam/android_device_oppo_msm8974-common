@@ -1,10 +1,12 @@
 [
   {
-    "repository": "android_device_oppo_common",
-    "target_path": "device/oppo/common"
+    "repository": "HazyTeam/android_device_oppo_common",
+    "target_path": "device/oppo/common",
+    "branch": "hazypop"
   },
   {
-    "repository": "android_kernel_oneplus_msm8974",
-    "target_path": "kernel/oneplus/msm8974"
+    "repository": "HazyTeam/android_kernel_oneplus_msm8974",
+    "target_path": "kernel/oneplus/msm8974",
+    "branch": "hazypop"
   }
 ]
